@@ -1,0 +1,467 @@
+{
+	"info": {
+		"_postman_id": "d35f9a31-9790-4f96-92ba-1be93efde3c8",
+		"name": "Chatbox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12482945"
+	},
+	"item": [
+		{
+			"name": "groups",
+			"item": [
+				{
+					"name": "create group",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"groupName\": \"solutions-ROOM4\",\n    \"users\": [\n        {\n            \"userId\": \"55a8fd09-09fa-4617-a982-9697725a2ff1\",\n            \"userType\": \"ADMIN\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/chatbox/group",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbox",
+								"group"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get groups list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/chatbox/group",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbox",
+								"group"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update group info",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"groupName\":\"Solutions-area-ROOM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/chatbox/group/:groupId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbox",
+								"group",
+								":groupId"
+							],
+							"variable": [
+								{
+									"key": "groupId",
+									"value": "f2a82846-7cfa-4918-8b43-a446055e1a63"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "manage group members",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"groupMembers\": [\n        {\n            \"userId\": \"e9d73bc0-0daa-4ea4-8f15-c0f7ac4dfd31\",\n            \"userType\":\"ADMIN\"\n        },\n        {\n            \"userId\":\"1943b1bc-f79f-4582-bc66-abb624b79fd9\",\n            \"userType\":\"USER\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/chatbox/group/:groupId/members",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbox",
+								"group",
+								":groupId",
+								"members"
+							],
+							"variable": [
+								{
+									"key": "groupId",
+									"value": "406f2cab-92d8-4d4c-8799-50db57f0fb54"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add member to the group",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"1943b1bc-f79f-4582-bc66-abb624b79fd9\",\n    \"groupId\": \"f2a82846-7cfa-4918-8b43-a446055e1a63\",\n    \"userType\": \"ADMIN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/chatbox/group/add-member",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbox",
+								"group",
+								"add-member"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete group",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/chatbox/group/:groupId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbox",
+								"group",
+								":groupId"
+							],
+							"variable": [
+								{
+									"key": "groupId",
+									"value": "406f2cab-92d8-4d4c-8799-50db57f0fb54"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get group data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/chatbox/group/:groupId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbox",
+								"group",
+								":groupId"
+							],
+							"variable": [
+								{
+									"key": "groupId",
+									"value": "38451e43-775d-42b1-b514-93f7d2187a93"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/chatbox/search-groups?groupName=2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbox",
+								"search-groups"
+							],
+							"query": [
+								{
+									"key": "groupName",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "create-user",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\": \"smmaaas3s\",\n    \"email\": \"kildf@asssmail.com\",\n    \"pswd\":\"qweds\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/chatbox/user",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbox",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/chatbox/user/:userId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbox",
+								"user",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "c7325bb1-6990-494f-852a-af93919d7510"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"fa5bbcc3-00fe-4bc2-a814-57ff8c443f76\",\n    \"userName\": \"krishna-6\",\n    \"email\": \"krishna6@mail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/chatbox/user",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbox",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var responseData = pm.response.json();",
+									"",
+									"pm.collectionVariables.set(\"token\", responseData.data.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\": \"smmaaas3s\",\n    \"pswd\":\"qweds\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/chatbox/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbox",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/chatbox/user",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbox",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/chatbox/logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\": \"smmaaas3s\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/chatbox/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbox",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
