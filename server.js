@@ -6,9 +6,6 @@ import { indexRouter } from "./src/routes.index.js";
 import { Server } from "socket.io";
 import path from "path";
 import cors from "cors";
-// routes
-// middlewares
-// import { decode } from "./middlewares/jwt.js";
 
 const app = express();
 
@@ -20,7 +17,6 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/chatbox", indexRouter);
 
-// Set the root directory
 const __dirname = path.resolve();
 console.log("__dirname", __dirname);
 const rootDirectory = path.join(__dirname);

@@ -7,7 +7,6 @@ export const createUser = async (req, res) => {
     console.log("user-Info", req.body);
     const userInfo = req.body;
     let hashPswd = "";
-    // TODO move it to auth
     const saltRounds = 10;
     hashPswd = await bcrypt.hash(userInfo.pswd, saltRounds);
 

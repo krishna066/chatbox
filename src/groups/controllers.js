@@ -5,8 +5,6 @@ export const createGroup = async (req, res) => {
   try {
     console.log("group-Info", req.body);
     const groupInfo = req.body;
-    //TODO
-    // add current user as admin
     let groupUsers = [];
     const groupData = await db.groups.create({
       groupName: groupInfo.groupName,
@@ -39,10 +37,6 @@ export const addMemberToGroup = async (req, res) => {
   try {
     console.log("group-Info", req.body);
     const payload = req.body;
-    //TODO
-    // check current user is admin
-    // check userId is existing
-    // check userid is not existing in table
     const insertResult = await db.userGroups.create({
       userId: payload.userId,
       groupId: payload.groupId,
@@ -158,8 +152,6 @@ export const manageGroupMembers = async (req, res) => {
   try {
     console.log("body", req.body);
     const groupId = req.params.groupId;
-    // TODO
-    // make sure 1 admin in the list, list shouldn't be empty
     const groupMembers = req.body.groupMembers;
     const insertGroupMembersList = groupMembers.map((item) => {
       return { ...item, groupId };

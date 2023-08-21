@@ -9,7 +9,6 @@ import { users } from "./users.model.js";
 import { groups } from "./groups.model.js";
 import { userGroups } from "./user-groups.model.js";
 import { invalidTokens } from "./invalid-tokens.js";
-// import { userRoles } from "./userRoles.model.js";
 
 export const sequelize = new Sequelize(
   dbConfig.DB,
